@@ -14,12 +14,32 @@ contract lenden {
         _;
     }
     
+    struct pending {
+        address reqAddress;
+        uint amount;
+        uint interestRate;
+        uint period;
+        bool active;
+    }
+    
+    struct accept {
+        address from;
+        address to;
+        uint amount;
+        uint interestRate;
+        uint period;
+        bool active;
+        string reqType;
+    }
+    
     struct user{
         uint id;
         string name;
         bool active;
         uint rating;
         uint lends;
+        pending[] pendingList;
+        accept[] acceptList;
         uint borrows;
     }
     
@@ -31,22 +51,11 @@ contract lenden {
         bool active;
     }
     
-    struct pending {
-        address from;
-        address to;
-        uint amount;
-        uint interestRate;
-        uint period;
-        bool active;
-    }
-    
     // mapping address to a person info
     mapping (address => user) private _userList;
     
     request[] public _borrowRequestList;
     request[] public _lendRequestList;
-    
-    pending[] private _pendingList;
     
     constructor() public {
         _owner = msg.sender;
@@ -66,7 +75,7 @@ contract lenden {
     // create and adding a request to the list
     function createRequest(uint amount, uint rate, uint period, string reqType) public returns (string) {
         
-        request storage temp;
+        request memory temp = request(0, 0, 0, 0, false);
         temp.reqAddress = msg.sender;
         temp.amount = amount;
         temp.interestRate = rate;
@@ -88,7 +97,8 @@ contract lenden {
         if(_borrowRequestList[index].active) {
             _borrowRequestList[index].active = false;
         
-            pending storage temp;
+            // creating an acceptList
+            accept memory temp = accept(0, 0, 0, 0, 0, true, "lend");
             temp.from = msg.sender;
             temp.to = _borrowRequestList[index].reqAddress;
             temp.amount = _borrowRequestList[index].amount;
@@ -96,29 +106,35 @@ contract lenden {
             temp.period = _borrowRequestList[index].period;
             temp.active = true; 
             
-            _pendingList.push(temp);
+            temp.reqType = "lend";
+            
+            // adding to lender's acceptList
+            _userList[msg.sender].acceptList.push(temp);
+            
+            temp.reqType = "borrow";
+            
+            // adding to borrower's acceptList
+            _userList[_borrowRequestList[index].reqAddress].acceptList.push(temp);
+            
         }
         
         return "requests not active";
     }
     
-    // function to lend moeny to a person
-    function payBack(uint index) public payable returns (string) {
-        if(_borrowRequestList[index].active) {
-            _borrowRequestList[index].active = false;
-        
-            pending storage temp;
-            temp.from = msg.sender;
-            temp.to = _borrowRequestList[index].reqAddress;
-            temp.amount = _borrowRequestList[index].amount;
-            temp.interestRate = _borrowRequestList[index].interestRate;
-            temp.period = _borrowRequestList[index].period;
-            temp.active = true; 
+    // accepting a lending request from the list
+    function borrow(uint index) public returns (string) {
+        if(_lendRequestList[index].active) {
+            _lendRequestList[index].active = false;
             
-            _pendingList.push(temp);
+            
         }
         
-        return "requests not active";
+        return "request not active";
+    }
+    
+    // paying money back to the lender 
+    function payBack(uint index) public payable returns (string) {
+        
     }
     
     /*
