@@ -124,12 +124,48 @@ contract lenden {
     // accepting a lending request from the list
     function borrow(uint index) public returns (string) {
         if(_lendRequestList[index].active) {
+            
+            pending memory temp = pending(0, 0, 0, 0, false);
+            
+            temp.reqAddress = msg.sender;
+            temp.amount = _lendRequestList[index].amount;
+            temp.interestRate = _lendRequestList[index].interestRate;
+            temp.period = _lendRequestList[index].period;
+            temp.active = true;
+            
+            // adding to the lender's pendingList
+            _userList[_lendRequestList[index].reqAddress].pendingList.push(temp);
+            
+            // setting this request as inactive since it has been satisfied
             _lendRequestList[index].active = false;
+        }       
             
-            
-        }
-        
         return "request not active";
+    }
+    
+    // when lender makes payment to the borrower after they accepted former's lend request
+    function acceptToLend(uint index) public {
+        
+        // creating an acceptList
+        accept memory temp = accept(0, 0, 0, 0, 0, true, "lend");
+        temp.from = msg.sender;
+        temp.to = _userList[msg.sender].pendingList[index].reqAddress;
+        temp.amount = _userList[msg.sender].pendingList[index].amount;
+        temp.interestRate = _userList[msg.sender].pendingList[index].interestRate;
+        temp.period = _userList[msg.sender].pendingList[index].period;
+        temp.active = true; 
+            
+        temp.reqType = "lend";
+            
+        // adding to lender's acceptList
+        _userList[msg.sender].acceptList.push(temp);
+            
+        temp.reqType = "borrow";
+            
+        // adding to borrower's acceptList
+        _userList[temp.to].acceptList.push(temp);
+            
+        _userList[msg.sender].pendingList[index].active = false;
     }
     
     // paying money back to the lender 
