@@ -7,6 +7,7 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
+<link rel="stylesheet" href="css/form.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -14,6 +15,7 @@
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+
 
   <link href="css/style.css" rel="stylesheet">
   <link href="css/tabs.css" rel="stylesheet">
@@ -105,22 +107,123 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a blandit enim. Aliquam gravida orci id fringilla feugiat. Integer convallis ut ex quis semper. Suspendisse ut lobortis urna. Proin viverra, eros iaculis iaculis posuere, risus justo tincidunt ex, eget tempor lectus erat vel massa. Cum sociis natoque penatibus et magnis.</p>
                     </div> -->
                     <div role="tabpanel" class="tab-pane fade" id="Section2">
-                        <h3>Section-2</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a blandit enim. Aliquam gravida orci id fringilla feugiat. Integer convallis ut ex quis semper. Suspendisse ut lobortis urna. Proin viverra, eros iaculis iaculis posuere, risus justo tincidunt ex, eget tempor lectus erat vel massa. Cum sociis natoque penatibus et magnis.</p>
+                        <h3>I want to LEND</h3>
+                        <form class="contact100-form validate-form">
+                          <div class="wrap-input100 validate-input" data-validate="Name is required">
+                            <span class="label-input100">Your Name</span>
+                            <input class="input100" type="text" name="name" placeholder="Enter your name">
+                            <span class="focus-input100"></span>
+                          </div>
+
+                          <div class="wrap-input100 validate-input" data-validate = "Valid Address Required">
+                            <span class="label-input100">Sending Address</span>
+                            <input class="input100" type="text" name="address" placeholder="Enter the Sending Address">
+                            <span class="focus-input100"></span>
+                          </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="ID is required">
+                              <span class="label-input100">Adhaar Identification</span>
+                              <input class="input100" type="text" name="name" placeholder="Enter your Adhaar Number">
+                              <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Amount">
+                              <span class="label-input100">Amount</span>
+                                <input class="input100" type="text" name="name" placeholder="Enter Amount">
+                              <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate = "Mobile Number Required">
+                              <span class="label-input100">Mobile Number</span>
+                                <input class="input100" type="text" name="name" placeholder="Enter your Mobile Number">
+                              <span class="focus-input100"></span>
+                            </div>
+
+                          <div class="container-contact100-form-btn">
+                            <div class="wrap-contact100-form-btn">
+                              <div class="contact100-form-bgbtn"></div>
+                              <button class="contact100-form-btn">
+                                <span>
+                                  Submit
+                                  <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
                     </div>
+
                     <div role="tabpanel" class="tab-pane fade" id="Section3">
-                        <h3>Section-3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a blandit enim. Aliquam gravida orci id fringilla feugiat. Integer convallis ut ex quis semper. Suspendisse ut lobortis urna. Proin viverra, eros iaculis iaculis posuere, risus justo tincidunt ex, eget tempor lectus erat vel massa. Cum sociis natoque penatibus et magnis. </p>
+                        <h3>I want to Borrow</h3>
+                        <form class="contact100-form validate-form">
+                          <div class="wrap-input100 validate-input" data-validate="Name is required">
+                            <span class="label-input100">Your Name</span>
+                            <input class="input100" type="text" name="name" placeholder="Enter your name">
+                            <span class="focus-input100"></span>
+                          </div>
+
+                          <div class="wrap-input100 validate-input" data-validate = "Valid Address Required">
+                            <span class="label-input100">Your Public Address</span>
+                            <input class="input100" type="text" name="address" placeholder="Enter your Pubic Address">
+                            <span class="focus-input100"></span>
+                          </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="ID is required">
+                              <span class="label-input100">Adhaar Identification</span>
+                              <input class="input100" type="text" name="name" placeholder="Enter your Adhaar Number">
+                              <span class="focus-input100"></span>
+                            </div>
+
+
+
+                          <div class="wrap-input100 validate-input" data-validate = "Enter Amount">
+                            <span class="label-input100">Amount to Borrow</span>
+                              <input class="input100" type="text" name="name" placeholder="Enter Amount">
+                            <span class="focus-input100"></span>
+                          </div>
+
+                          <div class="wrap-input100 validate-input" data-validate = "Enter Amount">
+                            <span class="label-input100">Duration</span>
+                              <input class="input100" type="text" name="name" placeholder="Enter Duration">
+                            <span class="focus-input100"></span>
+                          </div>
+
+                          <div class="wrap-input100 validate-input" data-validate = "Enter Amount">
+                            <span class="label-input100">Interest Rate</span>
+                              <input class="input100" type="text" name="name" placeholder="Enter Interest Rate">
+                            <span class="focus-input100"></span>
+                          </div>
+
+                          <div class="wrap-input100 validate-input" data-validate = "Mobile Number Required">
+                            <span class="label-input100">Mobile Number</span>
+                              <input class="input100" type="text" name="name" placeholder="Enter your Mobile Number">
+                            <span class="focus-input100"></span>
+                          </div>
+
+                          <div class="container-contact100-form-btn">
+                            <div class="wrap-contact100-form-btn">
+                              <div class="contact100-form-bgbtn"></div>
+                              <button class="contact100-form-btn">
+                                <span>
+                                  Submit
+                                  <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
         </div>
     </div>
 
-    </section><!-- #request -->
+    </section>
+
+    <!-- #request -->
     <!--==========================
       extra Section
     ============================-->
@@ -143,7 +246,9 @@
   <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="lib/easing/easing.min.js"></script>
   <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="js/form.js"></script>
   <script src="js/main.js"></script>
+
 
 </body>
 </html>
