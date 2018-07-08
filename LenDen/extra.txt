@@ -1,0 +1,55 @@
+<div class="card bg-primary">
+<div class="card-body text-center">
+  <p class="card-text">Amount     : 500rs.</p>
+  <p class="card-text">Duration   : 1 year .</p>
+  <p class="card-text">Rate       : 5% </p>
+  <p class="card-text">Public Key :x01238jdh28ehj1qnqhwikq..</p>
+  <button type="button" class="btn btn-warning">Invest Now</button>
+</div>
+</div>
+<div class="card bg-primary">
+<div class="card-body text-center">
+  <p class="card-text">Amount     : 22200rs.</p>
+  <p class="card-text">Duration   : 1.5 year .</p>
+  <p class="card-text">Rate       : 8% </p>
+  <p class="card-text">Public Key :xqwe01238jdh28ehj1qnqhwikq..</p>
+  <button type="button" class="btn btn-warning">Invest Now</button>
+</div>
+</div>
+<div class="card bg-primary">
+<div class="card-body text-center">
+<p class="card-text">Amount     : 1500rs.</p>
+<p class="card-text">Duration   : 10 days .</p>
+<p class="card-text">Rate       : 10% </p>
+<p class="card-text">Public Key :x1230fjjfqnqhwikq..</p>
+<button type="button" class="btn btn-warning">Invest Now</button>
+</div>
+</div>
+<div class="card bg-primary">
+<div class="card-body text-center">
+<p class="card-text">Amount     : 1100rs.</p>
+<p class="card-text">Duration   : 6 Months .</p>
+<p class="card-text">Rate       : 4% </p>
+<p class="card-text">Public Key :x0qweFf28ehj1qnqhwikq..</p>
+<button type="button" class="btn btn-warning">Invest Now</button>
+</div>
+</div>
+<div class="card bg-primary">
+<div class="card-body text-center">
+<p class="card-text">Amount     : 12500rs.</p>
+<p class="card-text">Duration   : 1.2 year .</p>
+<p class="card-text">Rate       : 3% </p>
+<p class="card-text">Public Key :x0qddd1fasqhwikq..</p>
+<button type="button" class="btn btn-warning">Invest Now</button>
+</div>
+</div>
+
+<div class="card bg-primary">
+<div class="card-body text-center">
+<p class="card-text">Amount     : 51000rs.</p>
+<p class="card-text">Duration   : 2 year .</p>
+<p class="card-text">Rate       : 5.5% </p>
+<p class="card-text">Public Key :x01qwqe242341qnqhwikq..</p>
+<button type="button" class="btn btn-warning">Invest Now</button>
+</div>
+</div>
