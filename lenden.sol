@@ -144,7 +144,7 @@ contract lenden {
     }
     
     // when lender makes payment to the borrower after they accepted former's lend request
-    function acceptToLend(uint index) public {
+    /*function acceptToLend(uint index) public {
         
         // creating an acceptList
         accept memory temp = accept(0, 0, 0, 0, 0, true, "lend");
@@ -166,11 +166,36 @@ contract lenden {
         _userList[temp.to].acceptList.push(temp);
             
         _userList[msg.sender].pendingList[index].active = false;
+    }*/
+    
+    function acceptToLend(uint index, address addr, uint amount, uint interestRate, uint period) public {
+        
+        // creating an acceptList
+        accept memory temp = accept(0, 0, 0, 0, 0, true, "lend");
+        temp.from = msg.sender;
+        temp.to = addr;
+        temp.amount = amount;
+        temp.interestRate = interestRate;
+        temp.period = period;
+        temp.active = true; 
+            
+        temp.reqType = "lend";
+            
+        // adding to lender's acceptList
+        _userList[msg.sender].acceptList.push(temp);
+            
+        temp.reqType = "borrow";
+            
+        // adding to borrower's acceptList
+        _userList[temp.to].acceptList.push(temp);
+            
+        _userList[msg.sender].pendingList[index].active = false;
     }
     
     // paying money back to the lender 
-    function payBack(uint index) public payable returns (string) {
-        
+    function payBack() public payable returns (string) {
+        // ToDo    
+        return "";
     }
     
     /*
