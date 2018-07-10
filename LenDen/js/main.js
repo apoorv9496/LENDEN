@@ -90,7 +90,6 @@ jQuery(document).ready(function($) {
           $('.nav-menu .menu-active').removeClass('menu-active');
           $(this).closest('li').addClass('menu-active');
         }
-
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
           $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
@@ -100,6 +99,19 @@ jQuery(document).ready(function($) {
       }
     }
   });
+
+  //Card
+  submit.onclick = function(){
+    var amount = document.getElementByID("amount").value;
+    var time = document.getElementByID("time").value;
+    var rate = document.getElementByID("rate").value;
+    var pubKey = document.getElementByID("pubKey").value;
+
+    document.getElementByID("outamount").value = amount;
+    document.getElementByID("outtime").value = time;
+    document.getElementByID("outrate").value = rate;
+    document.getElementByID("outpubkey").value = pubkey;
+  }
 
   // Gallery - uses the magnific popup jQuery plugin
   $('.gallery-popup').magnificPopup({

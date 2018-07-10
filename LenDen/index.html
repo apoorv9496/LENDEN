@@ -20,9 +20,6 @@
   <link href="css/tabs.css" rel="stylesheet">
   <link href="css/card.css" rel="stylesheet">
 
-  <!-- WEB3JS and JQUERY javascript libraries-->
-  <script src="./node_modules/web3/dist/web3.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 
 </head>
 
@@ -166,13 +163,13 @@
                           </div>
 
                           <div class="wrap-input100 validate-input" data-validate = "Valid Address Required">
-                            <span class="label-input100">Your Public Address</span>
+                            <span id="pubKey" class="label-input100">Your Public Address</span>
                             <input class="input100" type="text" name="address" placeholder="Enter your Pubic Address">
                             <span class="focus-input100"></span>
                           </div>
 
                             <div class="wrap-input100 validate-input" data-validate="ID is required">
-                              <span class="label-input100">Adhaar Identification</span>
+                              <span id="adhaar" class="label-input100">Adhaar Identification</span>
                               <input class="input100" type="text" name="name" placeholder="Enter your Adhaar Number">
                               <span class="focus-input100"></span>
                             </div>
@@ -180,19 +177,19 @@
 
 
                           <div class="wrap-input100 validate-input" data-validate = "Enter Amount">
-                            <span class="label-input100">Amount to Borrow</span>
+                            <span id="amount" class="label-input100">Amount to Borrow</span>
                               <input class="input100" type="text" name="name" placeholder="Enter Amount">
                             <span class="focus-input100"></span>
                           </div>
 
                           <div class="wrap-input100 validate-input" data-validate = "Enter Amount">
-                            <span class="label-input100">Duration</span>
+                            <span id="time" class="label-input100">Duration</span>
                               <input class="input100" type="text" name="name" placeholder="Enter Duration">
                             <span class="focus-input100"></span>
                           </div>
 
                           <div class="wrap-input100 validate-input" data-validate = "Enter Amount">
-                            <span class="label-input100">Interest Rate</span>
+                            <span id="rate" class="label-input100">Interest Rate</span>
                               <input class="input100" type="text" name="name" placeholder="Enter Interest Rate">
                             <span class="focus-input100"></span>
                           </div>
@@ -206,7 +203,7 @@
                           <div class="container-contact100-form-btn">
                             <div class="wrap-contact100-form-btn">
                               <div class="contact100-form-bgbtn"></div>
-                              <button class="contact100-form-btn">
+                              <button id="submit" class="contact100-form-btn">
                                 <span>
                                   Submit
                                   <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
@@ -234,49 +231,16 @@
       <div class="container">
   <h2>All requests</h2>
 
-
   <div class="card-deck">
     <div class="card bg-primary">
-      <div class="card-body text-center">
-        <p class="card-text">Amount     : 2500rs.</p>
-        <p class="card-text">Duration   : 6 Months .</p>
-        <p class="card-text">Rate       : 5% </p>
-        <p class="card-text">Public Key :x01238jdh28ehj1qnqhwikq..</p>
+      <div id="card" class="card-body text-center">
+        <p id="amount" class="card-text">Amount    : <span id="outamount"><span> </p>
+        <p id="time" class="card-text">Duration    : <span id="outtime"><span></p>
+        <p id="rate" class="card-text">Rate        : <span id="outrate"><span></p>
+        <p id="pubKey" class="card-text">Public Key: <span id="outpubkey"><span></p>
         <button type="button" class="btn btn-warning">Invest Now</button>
       </div>
     </div>
-    <div class="card bg-primary">
-      <div class="card-body text-center">
-        <p class="card-text">Amount     : 22500rs.</p>
-        <p class="card-text">Duration   : 1 year .</p>
-        <p class="card-text">Rate       : 7.5% </p>
-        <p class="card-text">Public Key :xkf1201238jdh28ehj1qnqhwikq..</p>
-        <button type="button" class="btn btn-warning">Invest Now</button>
-      </div>
-    </div>
-    <div class="card bg-primary">
-    <div class="card-body text-center">
-      <p class="card-text">Amount     : 12200rs.</p>
-      <p class="card-text">Duration   : 2 month .</p>
-      <p class="card-text">Rate       : 12.5% </p>
-      <p class="card-text">Public Key :x01238jdh28ehj1qnqhwikq..</p>
-      <button type="button" class="btn btn-warning">Invest Now</button>
-    </div>
-  </div>
-
-  <div class="card bg-primary">
-    <div class="card-body text-center">
-      <p class="card-text">Amount     : 112500rs.</p>
-      <p class="card-text">Duration   : 3 year .</p>
-      <p class="card-text">Rate       : 10% </p>
-      <p class="card-text">Public Key :x2101238jdh28ehj1qnqhwikq..</p>
-      <button type="button" class="btn btn-warning">Invest Now</button>
-    </div>
-  </div>
-
-
-
-
   </div>
 </div>
 
@@ -300,7 +264,6 @@
   <script src="js/form.js"></script>
   <script src="js/main.js"></script>
 
-  <script src="js/index.js"></script>
 
 </body>
 </html>
